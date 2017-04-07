@@ -33,8 +33,8 @@ public class DataLoader {
     public void loadTransactions(SparkSession session) {
         try {
             Map<String,String> jdbcOptions = new HashMap<String,String>();
-            jdbcOptions.put("url", "jdbc:mysql://localhost:3306/t2");
-//            jdbcOptions.put("driver", "com.mysql.jdbc.Driver");
+            jdbcOptions.put("url", "jdbc:mysql://localhost:3306/t2?useLegacyDatetimeCode=false&serverTimezone=UTC");
+            //jdbcOptions.put("driver", "com.mysql.cj.jdbc.Driver");
             jdbcOptions.put("dbtable", "trx_rec");
             jdbcOptions.put("user", "root");
             jdbcOptions.put("password", "root");
